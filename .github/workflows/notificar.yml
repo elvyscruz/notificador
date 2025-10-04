@@ -1,0 +1,17 @@
+name: notificar a ntfy
+
+# Se ejecuta en cada push al repositorio
+on:
+  push:
+    branches:
+      - main  # Cambia a la rama que quieras monitorear
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -d "¡Se ha hecho push en el repositorio!" https://ntfy.sh/devops-itla
+
